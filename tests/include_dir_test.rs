@@ -2,6 +2,7 @@
 #![plugin(include_dir)]
 
 #[test] fn include_dir_test() {
-    let hoge = include_dir!();
-    assert_eq!(hoge, "hoge");
+    let hoge = include_dir!("");
+    let content: String = String::from_utf8(hoge.get("dir/a.txt").unwrap().to_vec()).unwrap();
+    assert_eq!(content, "hoge\n");
 }

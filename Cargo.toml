@@ -8,3 +8,4 @@ name = "include_dir"
 plugin = true
 
 [dependencies]
+glob = "*"
