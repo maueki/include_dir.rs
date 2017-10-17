@@ -1,0 +1,10 @@
+[package]
+name = "include_dir"
+version = "0.1.0"
+authors = ["UEKI Masaru <masaru.ueki@itage.co.jp>"]
+
+[lib]
+name = "include_dir"
+plugin = true
+
+[dependencies]
