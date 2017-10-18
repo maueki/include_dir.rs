@@ -8,7 +8,6 @@ extern crate rustc_plugin;
 extern crate glob;
 
 use syntax::ast;
-use syntax::ast::Ident;
 use syntax::tokenstream::TokenTree;
 use syntax::ext::base::{ExtCtxt, MacResult, DummyResult, MacEager};
 use syntax::ext::build::AstBuilder;
@@ -57,7 +56,6 @@ fn expand_include_dir(cx: &mut ExtCtxt, sp: Span, tts: &[TokenTree]) -> Box<MacR
                         let lit_bytes = cx.expr_lit(sp, ast::LitKind::ByteStr(Rc::new(bytes)));
 
                         let stripped = path.strip_prefix(&dir).unwrap();
-                        println!("file : {}", stripped.display());
                         let lit_path = cx.expr_lit(
                             sp,
                             ast::LitKind::Str(
