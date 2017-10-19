@@ -1,11 +1,15 @@
 [package]
 name = "include_dir"
 version = "0.1.0"
-authors = ["UEKI Masaru <masaru.ueki@itage.co.jp>"]
+authors = ["Ueki Masaru <masaru.ueki@itage.co.jp>"]
+
+license = "MIT"
+description = "Compiler-plugin to include bytes from files in a directory recursively"
+repository = "https://github.com/maueki/include_dir.rs"
 
 [lib]
 name = "include_dir"
 plugin = true
 
 [dependencies]
-glob = "*"
+glob = "0.2"
