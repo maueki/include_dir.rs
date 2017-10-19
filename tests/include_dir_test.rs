@@ -1,5 +1,5 @@
 #![feature(plugin)]
-#![plugin(include_dir)]
+#![plugin(include_dir_bytes)]
 
 #[test] fn include_dir_test() {
     let file_map = include_dir!("");

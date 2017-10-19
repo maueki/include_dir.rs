@@ -1,5 +1,5 @@
 [package]
-name = "include_dir"
+name = "include_dir_bytes"
 version = "0.1.0"
 authors = ["Ueki Masaru <masaru.ueki@itage.co.jp>"]
 
@@ -8,7 +8,7 @@ description = "Compiler-plugin to include bytes from files in a directory recurs
 repository = "https://github.com/maueki/include_dir.rs"
 
 [lib]
-name = "include_dir"
+name = "include_dir_bytes"
 plugin = true
 
 [dependencies]
