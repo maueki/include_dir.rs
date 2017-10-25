@@ -30,7 +30,7 @@ fn expand_include_dir(cx: &mut ExtCtxt, sp: Span, tts: &[TokenTree]) -> Box<MacR
     let dir = res_rel_file(cx, sp, Path::new(&dir));
 
     let expr_new_map = quote_expr!(cx, std::collections::HashMap::new());
-    let stmt_let_map = quote_stmt!(cx, let mut map: std::collections::HashMap<String, Vec<u8>> = $expr_new_map;)
+    let stmt_let_map = quote_stmt!(cx, let mut map = $expr_new_map;)
         .unwrap();
 
     let mut stmts = vec![];
@@ -64,8 +64,11 @@ fn expand_include_dir(cx: &mut ExtCtxt, sp: Span, tts: &[TokenTree]) -> Box<MacR
                             ),
                         );
 
-                        // FIXME: 
-                        stmts.push(quote_stmt!(cx, let _ = map.insert($lit_path.to_string(), $lit_bytes.to_vec());).unwrap());
+                        stmts.push(
+                            quote_stmt!(cx,
+                                        let _ = map.insert(std::path::Path::new($lit_path),
+                                                           $lit_bytes.to_vec());).unwrap(),
+                        );
                     }
                 };
             }

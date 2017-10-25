@@ -1,11 +1,12 @@
 [package]
 name = "include_dir_bytes"
-version = "0.1.0"
+version = "0.2.1"
 authors = ["Ueki Masaru <masaru.ueki@itage.co.jp>"]
 
 license = "MIT"
-description = "Compiler-plugin to include bytes from files in a directory recursively"
+description = "Read the directory recursively, and creates a `HashMap` with these contents at compile time with the file path as the key."
 repository = "https://github.com/maueki/include_dir.rs"
+readme = "README.md"
 
 [lib]
 name = "include_dir_bytes"
